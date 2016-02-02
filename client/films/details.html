@@ -5,7 +5,10 @@
     		Seen? <span class="glyphicon glyphicon-${film.seen ? 'ok' : 'remove' }" aria-hidden="true"></span>
     	</div>
     	<div if.bind="film.seen">    		
-    		<strong>Rate: </strong> <span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open"> </span>
+    		<strong>Rate: </strong> <span repeat.for="i of range(film.rate)" class="glyphicon glyphicon-star"> </span>
+    	</div>
+    	<div if.bind="!film.seen">
+    		<strong>Interest: </strong> <span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open"> </span>
     	</div>
     </div>
     <div>
