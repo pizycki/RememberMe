@@ -2,12 +2,14 @@
     <table class="table">
         <tr>
             <th>Title</th>
+            <th>Seen</th>
             <th>Interest</th>
             <th></th>
         </tr>
         <tr repeat.for="film of films">
             <td>${film.title}</td>
-            <td><span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open" aria-hidden="true"/></td>
+            <td><span class="glyphicon glyphicon-${film.seen ? 'ok' : 'remove' }"/></td>
+            <td><span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open"/></td>
             <td>
                 <a route-href="route: details; params.bind: {id:film.id}" class="btn btn-default">Details</a>
                 <a route-href="route: edit; params.bind: {id:film.id}" class="btn btn-default">Edit</a>
@@ -15,5 +17,6 @@
             </td>
         </tr>
     </table>
+    <a bind.delegate="loadTop10" class="btn btn-default">Top 10</a>
     <a route-href="route:create" class="btn btn-default">Create</a>
 </template>

@@ -1,11 +1,13 @@
 ﻿import {inject} from 'aurelia-framework';
 import {FilmData} from './filmData';
+import {Router} from 'aurelia-router'
 
-@inject(FilmData)
+@inject(FilmData, Router)
 export class List {
 
-    constructor(filmData) {
-        this.data = filmData;        
+    constructor(filmData, router) {
+        this.data = filmData;
+        this.router = router;
     }
 
 	range(n) {
@@ -16,9 +18,14 @@ export class List {
 		return arr;
 	}
 
-    activate() {
-        return this.data.getAll()
-                        .then(films => this.films = films);
+    activate(params) {    		
+    	return this.data.getAll()
+                   .then(films => this.films = films);	                
+    }
+
+    loadTop10(){
+    	return this.data.getTop10()
+    					.then(films => this.films = films);
     }
 
 	delete() {

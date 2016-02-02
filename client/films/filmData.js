@@ -22,6 +22,10 @@ export class FilmData {
                         .then(parse);
     }
 
+    getTop10() {
+        return this.http.get("top").then(parse);
+    }
+
     getAll() {
         return this.http.get().then(parse);
     }

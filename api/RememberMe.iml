@@ -71,5 +71,6 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.0.30" level="project" />
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.0.30" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jdt.core.compiler:ecj:4.4.2" level="project" />
+    <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.8" level="project" />
   </component>
 </module>
