@@ -10,13 +10,16 @@ export class Edit {
         this.data = filmData;
         this.router = router;
         this.validation = validation.on(this)
-            .ensure('film.Title') 
+            .ensure('film.title') 
               .isNotEmpty()
               .hasMinLength(3)
               .hasMaxLength(100)
-            .ensure('film.ReleaseYear') 
+            .ensure('film.interestLevel')
               .isNumber()
-              .isBetween(1900,2100);
+              .isBetween(0,5)
+            .ensure('film.rate')
+              .isNumber()
+              .isBetween(1,10)
     }
 
     activate(params) {
@@ -27,7 +30,10 @@ export class Edit {
             });
         }
         else {
-            this.film = {};
+            this.film = {
+                rate: 5,
+                interestLevel: 3
+            };
         }
     }
 
@@ -36,7 +42,7 @@ export class Edit {
             return this.data.save(this.film);
         }).then(film => {
             console.log(film);
-            let url = this.router.generate("details", { id: film.Id});
+            let url = this.router.generate("details", { id: film.id });
             this.router.navigate(url);
         });
     }

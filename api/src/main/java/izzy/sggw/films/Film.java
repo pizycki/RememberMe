@@ -13,9 +13,15 @@ public class Film {
     @Id
     private String id;
 
-    private String Title;
+    private String title;
 
-    private String ReleaseYear;
+    private int interestLevel;
+
+    private float rate;
+
+    private boolean seen;
+
+    private boolean favourite;
 
     public String getId() {
         return id;
@@ -26,18 +32,42 @@ public class Film {
     }
 
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
-    public String getReleaseYear() {
-        return ReleaseYear;
+    public int getInterestLevel() {
+        return interestLevel;
     }
 
-    public void setReleaseYear(String releaseYear) {
-        ReleaseYear = releaseYear;
+    public void setInterestLevel(int interestLevel) {
+        this.interestLevel = interestLevel;
+    }
+
+    public float getRate() {
+        return rate;
+    }
+
+    public void setRate(float rate) {
+        this.rate = rate;
+    }
+
+    public boolean isSeen() {
+        return seen;
+    }
+
+    public void setSeen(boolean seen) {
+        this.seen = seen;
+    }
+
+    public boolean isFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        this.favourite = favourite;
     }
 }

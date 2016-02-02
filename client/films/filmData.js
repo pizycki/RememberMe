@@ -27,7 +27,7 @@ export class FilmData {
     }
 
     save(film) {
-        if(film.Id) {
+        if(film.id) {
             return this.http.put('', film).then(parse);                          
         }
         return this.http.post('', film).then(parse);

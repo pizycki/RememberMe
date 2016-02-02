@@ -35,22 +35,18 @@ public class FilmController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<Film> addFilm(@Valid @RequestBody Film film)
-    {
+    public ResponseEntity<Film> addFilm(@Valid @RequestBody Film film) {
         Film created = this.filmRepository.insert(film);
         return new ResponseEntity<>(created, HttpStatus.CREATED);
     }
 
     @RequestMapping(method = RequestMethod.PUT)
     public ResponseEntity<Film> updateFilm(@Valid @RequestBody Film film){
-        if (filmRepository.findOne(film.getId()) == null)
-            new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-
         Film updated = this.filmRepository.save(film);
         return new ResponseEntity<>(updated, HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(value = "contacts/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Film> deleteFilm(@PathVariable("id") String id){
         this.filmRepository.delete(id);
         return new ResponseEntity<>(HttpStatus.OK);
