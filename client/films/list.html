@@ -1,0 +1,18 @@
+﻿<template>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th></th>
+        </tr>
+        <tr repeat.for="film of films">
+            <td>${film.Title}</td>
+            <td>${film.ReleaseYear}</td>
+            <td>
+                <a route-href="route: details; params.bind: {id:film.Id}" class="btn btn-default">Details</a>
+                <a route-href="route: edit; params.bind: {id:film.Id}" class="btn btn-default">Edit</a>
+            </td>
+        </tr>
+    </table>
+    <a route-href="route:create" class="btn btn-default">Create</a>
+</template>

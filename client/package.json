@@ -1,0 +1,14 @@
+{
+  "jspm": {
+    "dependencies": {
+      "aurelia-bootstrapper": "npm:aurelia-bootstrapper@^1.0.0-beta.1.1.1",
+      "bootstrap": "github:twbs/bootstrap@^3.3.6",
+      "font-awesome": "npm:font-awesome@^4.5.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

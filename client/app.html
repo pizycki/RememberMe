@@ -1,0 +1,12 @@
+﻿<template>
+        
+    <nav-menu router.bind="router"></nav-menu>    
+
+    <div class="container">
+        <div class="fa fa-spinner fa-spin" show.bind="router.isNavigating">
+            <i class="fa fa-spinner fa-spin"></i>
+        </div>
+        <router-view></router-view>
+    </div>
+
+</template>
