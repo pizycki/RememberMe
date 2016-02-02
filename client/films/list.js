@@ -19,12 +19,27 @@ export class List {
 	}
 
     activate(params) {    		
-    	return this.data.getAll()
-                   .then(films => this.films = films);	                
+       	return this.data.getAll()
+                   .then(films => this.films = films);	
     }
 
-    loadTop10(){
+    loadAll(){
+    	return this.data.getAll()
+                   .then(films => this.films = films);	
+    }
+
+    loadTop10(){    	
     	return this.data.getTop10()
+    					.then(films => this.films = films);
+    }
+
+    loadWatched(){
+    	return this.data.getWatched(true)
+    					.then(films => this.films = films);
+    }
+
+	loadToWatch(){
+    	return this.data.getWatched(false)
     					.then(films => this.films = films);
     }
 

@@ -54,9 +54,9 @@ public class FilmController {
         return this.filmRepository.findAll();
     }
 
-    @RequestMapping(value = "/seen", method = RequestMethod.GET)
-    public List<Film> getSeenFilms() {
-        return filmRepository.findBySeen(true);
+    @RequestMapping(value = "/watched/{watched}", method = RequestMethod.GET)
+    public List<Film> getWatchedFilms(@PathVariable("watched") String watched) {
+        return filmRepository.findBySeen(Boolean.parseBoolean(watched));
     }
 
     @RequestMapping(value = "/top", method = RequestMethod.GET)

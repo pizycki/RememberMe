@@ -30,6 +30,10 @@ export class FilmData {
         return this.http.get().then(parse);
     }
 
+    getWatched(watched) {
+        return this.http.get("watched/" + watched).then(parse);
+    }
+
     save(film) {
         if(film.id) {
             return this.http.put('', film).then(parse);                          
