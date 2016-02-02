@@ -11,4 +11,5 @@ import java.util.List;
 
 public interface FilmRepository extends MongoRepository<Film, String> {
     List<Film> findTop10BySeen(boolean seen, Sort sort);
+    List<Film> findBySeen(boolean seen);
 }

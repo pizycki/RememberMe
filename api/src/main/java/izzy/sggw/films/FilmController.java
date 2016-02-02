@@ -52,11 +52,11 @@ public class FilmController {
     {
         return this.filmRepository.findAll();
     }
-//
-//    @RequestMapping(value = "/seen", method = RequestMethod.GET)
-//    public List<Film> getSeenFilms() {
-//        return FilmDao.
-//    }
+
+    @RequestMapping(value = "/seen", method = RequestMethod.GET)
+    public List<Film> getSeenFilms() {
+        return filmRepository.findBySeen(true);
+    }
 
     @RequestMapping(value = "/top", method = RequestMethod.GET)
     public List<Film> getTop10(){
