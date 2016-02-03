@@ -1,15 +1,23 @@
 ﻿import {inject} from 'aurelia-framework';
 import {FilmData} from './filmData';
+import {FilmApi} from './filmApi';
 
-@inject(FilmData)
+@inject(FilmData, FilmApi)
 export class Details {
 
-    constructor(filmData) {
+    constructor(filmData, api) {
         this.data = filmData;
+        this.api = api;
+        this.details = {};
     }
 
     activate(params) {
         return this.data.getById(params.id).then(film => this.film = film);
+    }
+
+    loadDetails() {
+    	return this.api.getFilmDetailsByTitle(this.film.title)
+    				   .then(details => this.details = details);
     }
 
 	range(n) {

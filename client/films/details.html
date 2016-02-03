@@ -1,17 +1,40 @@
 ﻿<template>
     <h3>${film.title}</h3>
-    <div>
-    	<div>
-    		Seen? <span class="glyphicon glyphicon-${film.seen ? 'ok' : 'remove' }" aria-hidden="true"></span>
-    	</div>
-    	<div if.bind="film.seen">    		
-    		<strong>Rate: </strong> <span repeat.for="i of range(film.rate)" class="glyphicon glyphicon-star"> </span>
-    	</div>
-    	<div if.bind="!film.seen">
-    		<strong>Interest: </strong> <span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open"> </span>
-    	</div>
-    </div>
-    <div>
+    <div class="container">
+	    <div class="row">
+
+		    <div class="col-md-3 highlight">
+		    	<div>
+		    		Seen? <span class="glyphicon glyphicon-${film.seen ? 'ok' : 'remove' }" aria-hidden="true"></span>
+		    	</div>
+		    	<div if.bind="film.seen">    		
+		    		<strong>Rate: </strong> <span repeat.for="i of range(film.rate)" class="glyphicon glyphicon-star"> </span>
+		    	</div>
+		    	<div if.bind="!film.seen">
+		    		<strong>Interest: </strong> <span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open"> </span>
+		    	</div>
+		    </div>
+
+		    <div class="col-md-3">
+		    	<div>
+		    		<strong>Title: </strong>${details.title}
+		    	</div>
+		    	<div>
+		    		<strong>Year: </strong>${details.year}
+		    	</div>
+		    	<div>
+		    		<strong>IMDB: </strong> <a href="${details.imdbUrl}" target="_blank">${details.title}</a>
+		    	</div>
+		    </div>
+
+		    <div class="col-md-3 highlight">
+	    		<img src="${details.poster}" />
+	    	</div>
+
+		</div>
+
         <a route-href="route:home" class="btn btn-default">Back to list</a>
+        <a click.delegate="loadDetails()" class="btn btn-danger">Load up details</a>
+		    
     </div>
 </template>
