@@ -11,7 +11,7 @@ public class OmdbFilm {
     private final String imdbBaseUrl = "http://www.imdb.com/title/";
 
     private String title;
-    private int year;
+    private String year;
     private String imdbID;
     private String type;
     private String poster;
@@ -40,11 +40,11 @@ public class OmdbFilm {
         this.imdbID = imdbID;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 

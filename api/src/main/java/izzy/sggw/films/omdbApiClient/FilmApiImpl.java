@@ -37,7 +37,7 @@ public class FilmApiImpl implements FilmApi {
                 film.setImdbID((String)item.get("imdbID"));
                 film.setTitle((String) item.get("Title"));
                 film.setType((String) item.get("Type"));
-                film.setYear(Integer.parseInt((String) item.get("Year")));
+                film.setYear((String) item.get("Year"));
 
                 searchResult.getSearch().add(film);
             }
