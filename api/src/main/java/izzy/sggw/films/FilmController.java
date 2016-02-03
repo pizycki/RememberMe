@@ -1,5 +1,7 @@
 package izzy.sggw.films;
 
+import izzy.sggw.films.omdbApiClient.FilmApi;
+import izzy.sggw.films.omdbApiClient.OmdbFilm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
@@ -16,12 +18,13 @@ import java.util.List;
 @RequestMapping("/api/films")
 public class FilmController {
     private final FilmRepository filmRepository;
-
+    private FilmApi filmApi;
 
     @Autowired
-    public FilmController(FilmRepository filmRepository)
+    public FilmController(FilmRepository filmRepository, FilmApi filmApi)
     {
         this.filmRepository = filmRepository;
+        this.filmApi = filmApi;
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -62,5 +65,19 @@ public class FilmController {
     @RequestMapping(value = "/top", method = RequestMethod.GET)
     public List<Film> getTop10(){
         return filmRepository.findTop10BySeen(true, new Sort(Sort.Direction.DESC, "rate"));
+    }
+
+    @RequestMapping(value = "/cover/{title}", method = RequestMethod.GET)
+    public ResponseEntity<String> getCover(@PathVariable("title") String title){
+        String cover = this.filmApi.getCover(title);
+        return "".equals(cover)
+            ? new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            : new ResponseEntity<>(cover, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "details/{title}", method = RequestMethod.GET)
+    public OmdbFilm getFilmDetails(@PathVariable("title") String title)
+    {
+        return this.filmApi.getFilmDetails(title);
     }
 }
