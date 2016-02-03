@@ -40,4 +40,9 @@ export class FilmData {
         }
         return this.http.post('', film).then(parse);
     }
+
+    remove(id){
+        return this.http.delete(id);
+    }
+
 }

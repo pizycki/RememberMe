@@ -43,7 +43,11 @@ export class List {
     					.then(films => this.films = films);
     }
 
-	delete() {
-		// TODO implement
+	delete(id) {
+		var r = confirm("Are you sure?");
+		if (r==true) {
+			this.data.remove(id)
+			return this.loadAll();
+		}
 	}
 }
