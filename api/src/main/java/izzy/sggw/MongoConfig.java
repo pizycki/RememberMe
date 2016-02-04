@@ -2,7 +2,6 @@ package izzy.sggw;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
@@ -14,7 +13,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @Configuration
 @EnableMongoRepositories
-@ComponentScan(basePackageClasses = {Application.class})
 @PropertySource("classpath:application.properties")
 public class MongoConfig extends AbstractMongoConfiguration
 {
