@@ -28,3 +28,6 @@ Spring components and parsed manually with [JSON.Simple library](https://code.go
 
 As a data storage (a.k.a database) I used NoSQL, document database [MongoDB](https://www.mongodb.org/).
 Quick tutorial how to use Spring MongoDB adapter can be found [here](https://spring.io/guides/gs/accessing-data-mongodb/#use-maven). 
+
+## Screens
+![Creating film](/screens/create.png)
