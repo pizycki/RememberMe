@@ -44,10 +44,10 @@ You can do this all manually (it means, with mouse) too, but why shouldn't we ma
 
 The installation may take several minutes. Go make yourself a cup of coffee. Afterall, we develop in Java!
 
-When it's done, install one more thing from `npm`. Unless you don't use IIS or any other HTTP server.
+When it's done, install one more thing from `npm`, unless you use IIS or any other HTTP server.
 
 ```
-npm install local-web-server
+npm install -g local-web-server
 ```
 
 When it's done, run MongoDB server. Just type `mongod` inside `cmd` and you should see something like this.
