@@ -9,18 +9,24 @@
 		    	</div>
 		    	<div if.bind="film.seen">    		
 		    		<strong>Rate: </strong> <span repeat.for="i of range(film.rate)" class="glyphicon glyphicon-star"> </span>
+		    	</div>		    	
+		    	<div if.bind="film.seen">    		
+		    		<strong>Favourite: </strong> Yesss! <span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 
 		    	</div>
 		    	<div if.bind="!film.seen">
 		    		<strong>Interest: </strong> <span repeat.for="i of range(film.interestLevel)" class="glyphicon glyphicon-eye-open"> </span>
 		    	</div>
 		    </div>
 
-		    <div class="col-md-3">
+		    <div class="col-md-3" show.bind="details.title">
 		    	<div>
 		    		<strong>Title: </strong>${details.title}
 		    	</div>
 		    	<div>
 		    		<strong>Year: </strong>${details.year}
+		    	</div>
+		    	<div>
+		    		<strong>Type: </strong> ${details.type}</a>
 		    	</div>
 		    	<div>
 		    		<strong>IMDB: </strong> <a href="${details.imdbUrl}" target="_blank">${details.title}</a>
@@ -33,6 +39,7 @@
 
 		</div>
 
+        <a route-href="route: edit; params.bind: {id:film.id}" class="btn btn-default">Edit</a>
         <a route-href="route:home" class="btn btn-default">Back to list</a>
         <a click.delegate="loadDetails()" class="btn btn-danger">Load up details</a>
 		    

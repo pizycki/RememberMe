@@ -3,12 +3,15 @@
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#/">${router.title}</a>
+                <i><a class="navbar-brand" href="#/">${router.title}</a></i>
             </div>
             <ul class="nav navbar-nav">
                 <li repeat.for="row of router.navigation"
                     class="${row.isActive ? 'active' : ''}">
                     <a href.bind="row.href">${row.title}</a>
+                </li>
+                <li>
+                    <a href="http://github.com/pizycki" target="_blank" >GitHub</a>
                 </li>
             </ul>
         </div>
