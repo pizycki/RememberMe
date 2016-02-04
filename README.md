@@ -1,9 +1,11 @@
 # RememberMe
+---
 Aurelia + Spring web app to track watched films
 
 _Project created for course "JSP development" @ SGGW_
 
 ## What does it do?
+---
 * It helps user to track films he wants to watch and leaving notes to films that he already watched.
 
 * For quick film look up, there is simple film catalog avaible. 
@@ -11,6 +13,7 @@ _Project created for course "JSP development" @ SGGW_
 * For every film saved in user repository, there is an option to download basic details about the film (there is even a poster!).
 
 ## Architecture
+---
 The whole application is based on "client-server" pattern, where client is a Single Page Application (SPA in short)
 and the backend is REST-like API.
 
@@ -30,4 +33,10 @@ As a data storage (a.k.a database) I used NoSQL, document database [MongoDB](htt
 Quick tutorial how to use Spring MongoDB adapter can be found [here](https://spring.io/guides/gs/accessing-data-mongodb/#use-maven). 
 
 ## Screens
+---
+![Browsing catalog](/screens/catalog.png)
 ![Creating film](/screens/create.png)
+![Film with basic details](/screens/film_full_details.png)
+![Rating film](/screens/edit_rating.png)
+![Listing all films to watch](/screens/list_Already_watched.png)
+![Deleting film](/screens/delete.png)
