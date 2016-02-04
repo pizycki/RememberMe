@@ -1,7 +1,7 @@
 import {inject} from "aurelia-framework";
 import {HttpClient} from "aurelia-http-client";
 
-let baseUrl = "http://localhost:8080/api/films";
+export let baseUrl = "http://localhost:8080/api/films";
 let parse = message => JSON.parse(message.response);
 
 @inject(HttpClient)
@@ -24,6 +24,11 @@ export class FilmApi {
 
     getFilmCover(title){
         return this.http.get("cover/" + title)
+                        .then(parse);
+    }
+
+    searchFilmsByTitle(title){
+        return this.http.get("catalog/" + title)
                         .then(parse);
     }
 }

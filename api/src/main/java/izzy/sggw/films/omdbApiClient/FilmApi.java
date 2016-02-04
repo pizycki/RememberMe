@@ -7,4 +7,7 @@ public interface FilmApi {
     String getCover(String title);
 
     OmdbFilm getFilmDetails(String title);
+
+    FilmSearchResult searchFilmsByTitle(String title);
+
 }

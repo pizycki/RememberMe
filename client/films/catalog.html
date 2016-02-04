@@ -1,0 +1,21 @@
+<template>
+
+	<input type="text" placeholder="Enter title of the film you are looking for" value.bind="query" />
+    <button class="btn btn-danger" click.delegate="search()" disabled.bind="query === ''"><i>Search!</i></button>
+
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Type</th>
+            <th>IMDB</th>
+        </tr>
+        <tr repeat.for="film of list">        	
+            <td><a href="${film.imdbUrl}" target="_blank" >${film.title}</a></td>
+            <td>${film.year}</td>
+            <td>${film.type}</td>
+            <td><a href="${film.imdbUrl}" target="_blank" >${film.imdbUrl}</a></td>            
+        </tr>
+    </table>
+
+</template>

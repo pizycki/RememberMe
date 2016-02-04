@@ -1,6 +1,7 @@
 package izzy.sggw.films;
 
 import izzy.sggw.films.omdbApiClient.FilmApi;
+import izzy.sggw.films.omdbApiClient.FilmSearchResult;
 import izzy.sggw.films.omdbApiClient.OmdbFilm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -79,5 +80,11 @@ public class FilmController {
     public OmdbFilm getFilmDetails(@PathVariable("title") String title)
     {
         return this.filmApi.getFilmDetails(title);
+    }
+
+    @RequestMapping(value = "catalog/{title}", method = RequestMethod.GET)
+    public FilmSearchResult searchFilmsByTitle(@PathVariable("title") String title)
+    {
+        return this.filmApi.searchFilmsByTitle(title);
     }
 }

@@ -14,7 +14,7 @@ import java.util.Iterator;
 @Component
 public class FilmApiImpl implements FilmApi {
 
-    public FilmSearchResult searchFilmByTitle(String title) {
+    public FilmSearchResult searchFilmsByTitle(String title) {
         try {
 
             RestTemplate template = new RestTemplate();
@@ -51,7 +51,7 @@ public class FilmApiImpl implements FilmApi {
 
     @Override
     public String getCover(String title)  {
-        FilmSearchResult searchResult = searchFilmByTitle(title);
+        FilmSearchResult searchResult = searchFilmsByTitle(title);
         if (searchResult.getTotalResults() == 0
                 || searchResult.getSearch().isEmpty())
             return "";
@@ -61,6 +61,7 @@ public class FilmApiImpl implements FilmApi {
 
     @Override
     public OmdbFilm getFilmDetails(String title) {
-        return searchFilmByTitle(title).getSearch().get(0);
+        return searchFilmsByTitle(title).getSearch().get(0);
     }
+
 }
