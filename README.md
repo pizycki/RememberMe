@@ -88,12 +88,12 @@ First, the posted in request body `film`, is being validated. If the model is no
 
 Having created entity, we are able to delete it, by placing `ID` as parameter in request URL and using `DELETE` method.
 
-```
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Film> deleteFilm(@PathVariable("id") String id){
-        this.filmRepository.delete(id);
-        return new ResponseEntity<>(HttpStatus.OK);
-    }
+```java
+@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+public ResponseEntity<Film> deleteFilm(@PathVariable("id") String id){
+    this.filmRepository.delete(id);
+    return new ResponseEntity<>(HttpStatus.OK);
+}
 ```
 
 ## Setup
