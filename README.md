@@ -22,7 +22,7 @@ It's somehow similiar to announced Angular2 framework. To serve static resource 
 
 The API is hosted with [Spring MVC framework](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html)
 (altough, we don't use V in here). To make development even more simple, I choosed Spring Boot framework with
-[Maven](https://maven.apache.org/) type project. It made resolving all dependancies painless.
+[Maven](https://maven.apache.org/) type project for resolving all dependancies painless. The API hosting server is Tomcat.
 
 For gathering and browsing film catalog I've used open source data provider [OMDb API](http://www.omdbapi.com/).
 The requests are made on the server-side with [RestTemplate](https://spring.io/guides/gs/consuming-rest/) from one of 
@@ -111,10 +111,10 @@ You can do this all manually (it means, with mouse) too, but why shouldn't we ma
 
 The installation may take several minutes. Go make yourself a cup of coffee. Afterall, we develop in Java!
 
-When it's done, install one more thing from `npm`. Unless you don't use IIS or any other HTTP server.
+When it's done, install one more thing from `npm`, unless you use IIS or any other HTTP server.
 
 ```
-npm install local-web-server
+npm install -g local-web-server
 ```
 
 When it's done, run MongoDB server. Just type `mongod` inside `cmd` and you should see something like this.
@@ -152,9 +152,9 @@ serving at http://DAYSTATE-PC:8000, http://192.168.0.15:8000, http://192.168.94.
 
 And you're done!
 
-Open your browser and navigate to one of the `URL` visible in the 3rd `cmd`. Here is `http://DAYSTATE-PC:8000`.
+Open your browser and navigate to one of the `URL` visible in the 3rd `cmd`. Here is mine: `http://DAYSTATE-PC:8000`.
 
-There you go, your Remember Me! app
+There you go, your Remember Me! up and running.
 
 Congratulations.
 
