@@ -96,6 +96,9 @@ public ResponseEntity<Film> deleteFilm(@PathVariable("id") String id){
 }
 ```
 
+---
+
+
 ## Setup
 
 I'll show how to setup project in the fastest way I know. Sorry linux-lovers, I'm going to achieve this on Windows. Sorry Windows-lovers, I'm going to use `cmd` for most of the time.

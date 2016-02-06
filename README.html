@@ -1,0 +1,895 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>README</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-rememberme" class="anchor" href="#rememberme" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>RememberMe</h1>
+
+<p>Aurelia + Spring web app to track watched films</p>
+
+<p><em>Project created for course "JSP development" @ SGGW</em></p>
+
+<p>Paweł Iżycki</p>
+
+<h2>
+<a id="user-content-what-does-it-do" class="anchor" href="#what-does-it-do" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What does it do?</h2>
+
+<ul>
+<li><p>It helps user to track films he wants to watch and leaving notes to films that he already watched.</p></li>
+<li><p>For quick film look up, there is simple film catalog avaible. </p></li>
+<li><p>For every film saved in user repository, there is an option to download basic details about the film (there is even a poster!).</p></li>
+</ul>
+
+<h2>
+<a id="user-content-architecture" class="anchor" href="#architecture" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Architecture</h2>
+
+<p>The whole application is based on "client-server" pattern, where client is a Single Page Application (SPA in short)
+and the backend is REST-like API.</p>
+
+<p>Client was build with use of <a href="http://aurelia.io/">Aurelia framework</a>, which is JavaScript library for creating SPA applications. 
+It's somehow similiar to announced Angular2 framework. To serve static resource requests we used simple tool
+<a href="https://www.npmjs.com/package/local-web-server">local-web-server</a>.</p>
+
+<p>The API is hosted with <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html">Spring MVC framework</a>
+(altough, we don't use V in here). To make development even more simple, I choosed Spring Boot framework with
+<a href="https://maven.apache.org/">Maven</a> type project for resolving all dependancies painless. The API hosting server is Tomcat.</p>
+
+<p>For gathering and browsing film catalog I've used open source data provider <a href="http://www.omdbapi.com/">OMDb API</a>.
+The requests are made on the server-side with <a href="https://spring.io/guides/gs/consuming-rest/">RestTemplate</a> from one of 
+Spring components and parsed manually with <a href="https://code.google.com/archive/p/json-simple/">JSON.Simple library</a>.</p>
+
+<p>As a data storage (a.k.a database) I used NoSQL, document database <a href="https://www.mongodb.org/">MongoDB</a>.
+Quick tutorial how to use Spring MongoDB adapter can be found <a href="https://spring.io/guides/gs/accessing-data-mongodb/#use-maven">here</a>. </p>
+
+<h2>
+<a id="user-content-how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works</h2>
+
+<h3>
+<a id="user-content-auto-generated-repositories" class="anchor" href="#auto-generated-repositories" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Auto generated repositories</h3>
+
+<p>The app is basic CRUD-ish application. While developoing, I took the adventage of auto-implemented repositories. It saved me a lot of time by sparing me implementing all repository methods by myself.</p>
+
+<p>An example of film repository, where all watched films are stored, is listed below.</p>
+
+<div class="highlight highlight-source-java"><pre><span class="pl-k">import</span> <span class="pl-smi">org.springframework.data.domain.Sort</span>;
+<span class="pl-k">import</span> <span class="pl-smi">org.springframework.data.mongodb.repository.MongoRepository</span>;
+
+<span class="pl-k">import</span> <span class="pl-smi">java.util.List</span>;
+
+<span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">FilmRepository</span> <span class="pl-k">extends</span> <span class="pl-e">MongoRepository&lt;<span class="pl-smi">Film</span>, <span class="pl-smi">String</span>&gt;</span> {
+    <span class="pl-k">List&lt;<span class="pl-smi">Film</span>&gt;</span> <span class="pl-en">findTop10BySeen</span>(<span class="pl-k">boolean</span> <span class="pl-v">seen</span>, <span class="pl-smi">Sort</span> <span class="pl-v">sort</span>);
+    <span class="pl-k">List&lt;<span class="pl-smi">Film</span>&gt;</span> <span class="pl-en">findBySeen</span>(<span class="pl-k">boolean</span> <span class="pl-v">seen</span>);
+}</pre></div>
+
+<hr>
+
+<p>As mentioned before, the implementation of interface is autogenerated basing on methods' headers. <code>MongoRepository&lt;Film, String&gt;</code> contains methods like <code>insert</code> (Create), <code>find</code> (Read), <code>save</code> (Update) and <code>remove</code> (Delete). Extending methods in <code>FilmRepository</code> interface, <code>findTop10BySeen</code> and <code>findBySeen</code>, are implemented by their name and parameter analysis. Convetion of naming lets compiler to create implementation of methods by itself.</p>
+
+<p>As we used Spring framework in the project, we could use integrated <a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/beans.html">Dependency Resolving system</a>, based on <a href="https://docs.oracle.com/javase/tutorial/java/annotations/basics.html">Annotations</a>. By simply marking property or constructor as <code>@Autowired</code>, the runtime will resolve all necessary dependancies once the application is booted.</p>
+
+<h3>
+<a id="user-content-smart-libraries" class="anchor" href="#smart-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Smart libraries</h3>
+
+<p>Spring Boot made project configuration very simple. With help of Maven librabries repository, all needed plugins can downloaded and attached to project in few seconds. Dependent libriaries, required by project, are listed between <code>dependencies</code> tag, inside <code>pom.xml</code> file.</p>
+
+<p>Here's declaration of need to download library for JSON serialisation.</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
+    &lt;<span class="pl-ent">groupId</span>&gt;com.googlecode.json-simple&lt;/<span class="pl-ent">groupId</span>&gt;
+    &lt;<span class="pl-ent">artifactId</span>&gt;json-simple&lt;/<span class="pl-ent">artifactId</span>&gt;
+    &lt;<span class="pl-ent">version</span>&gt;1.1.1&lt;/<span class="pl-ent">version</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<hr>
+
+<p>All controllers use Spring MVC annotations, where we can define how the resource can be accessed, by <code>GET</code>, <code>POST</code>, <code>PUT</code> or <code>DELETE</code>.</p>
+
+<p>Here is an example of action creating film in repository.</p>
+
+<div class="highlight highlight-source-java"><pre>@RequestMapping(method <span class="pl-k">=</span> <span class="pl-smi">RequestMethod</span><span class="pl-c1"><span class="pl-k">.</span>POST</span>)
+<span class="pl-k">public</span> <span class="pl-k">ResponseEntity&lt;<span class="pl-smi">Film</span>&gt;</span> addFilm(@<span class="pl-smi">Valid</span> @<span class="pl-smi">RequestBody</span> <span class="pl-smi">Film</span> film) {
+    <span class="pl-smi">Film</span> created <span class="pl-k">=</span> <span class="pl-v">this</span><span class="pl-k">.</span>filmRepository<span class="pl-k">.</span>insert(film);
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-k">ResponseEntity&lt;&gt;</span>(created, <span class="pl-smi">HttpStatus</span><span class="pl-c1"><span class="pl-k">.</span>CREATED</span>);
+}</pre></div>
+
+<p>First, the posted in request body <code>film</code>, is being validated. If the model is not valid, the code <code>400</code> is being returned. If all goes well, the created entity, with assigned ID property is returned along with <code>HttpStatus.CREATED = 201</code> status.</p>
+
+<p>Having created entity, we are able to delete it, by placing <code>ID</code> as parameter in request URL and using <code>DELETE</code> method.</p>
+
+<div class="highlight highlight-source-java"><pre>@RequestMapping(value <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>/{id}<span class="pl-pds">"</span></span>, method <span class="pl-k">=</span> <span class="pl-smi">RequestMethod</span><span class="pl-c1"><span class="pl-k">.</span>DELETE</span>)
+<span class="pl-k">public</span> <span class="pl-k">ResponseEntity&lt;<span class="pl-smi">Film</span>&gt;</span> deleteFilm(@PathVariable(<span class="pl-s"><span class="pl-pds">"</span>id<span class="pl-pds">"</span></span>) <span class="pl-smi">String</span> id){
+    <span class="pl-v">this</span><span class="pl-k">.</span>filmRepository<span class="pl-k">.</span>delete(id);
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-k">ResponseEntity&lt;&gt;</span>(<span class="pl-smi">HttpStatus</span><span class="pl-c1"><span class="pl-k">.</span>OK</span>);
+}</pre></div>
+
+<hr>
+
+<h2>
+<a id="user-content-setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>I'll show how to setup project in the fastest way I know. Sorry linux-lovers, I'm going to achieve this on Windows. Sorry Windows-lovers, I'm going to use <code>cmd</code> for most of the time.</p>
+
+<p>First open your <code>command line</code> as Administrator user. 
+Download  <a href="https://chocolatey.org/">chocolatey</a> packet manager (just copy-paste&amp;enter the first script on that page).
+Install git, Java SDK, JRE, Maven, NodeJS, MongoDB.</p>
+
+<div class="highlight highlight-source-shell"><pre>cinst git jdk8 jre8 maven nodejs mongodb -y</pre></div>
+
+<p>You can do this all manually (it means, with mouse) too, but why shouldn't we make it faster and simpler?</p>
+
+<p>The installation may take several minutes. Go make yourself a cup of coffee. Afterall, we develop in Java!</p>
+
+<p>When it's done, install one more thing from <code>npm</code>, unless you use IIS or any other HTTP server.</p>
+
+<pre><code>npm install -g local-web-server
+</code></pre>
+
+<p>When it's done, run MongoDB server. Just type <code>mongod</code> inside <code>cmd</code> and you should see something like this.</p>
+
+<pre><code>...
+2016-02-04T13:49:03.859+0100 I CONTROL  [initandlisten] MongoDB starting : pid=10180 port=27017 dbpath=C:\data\db\ 64-bit host=DAYSTATE-PC
+...
+</code></pre>
+
+<blockquote>
+<p>Note that <code>C:\data\db\</code> is default path where MongoDB instance files are stored.</p>
+</blockquote>
+
+<p>Then, open new <code>cmd</code> window and clone this repository onto your disk. When it's done, change to <code>api</code> directory.</p>
+
+<pre><code>git clone https://github.com/pizycki/RememberMe 
+cd RememberMe/api/
+</code></pre>
+
+<p>To compile source code and run Tomcat instance with working API, simply type <code>mvn spring-boot:run -X</code> (paramter <code>-X</code> is optional but gives us more info what's going on).</p>
+
+<p>It should explode with <em>a lot of</em> text, but in the end you should see those two lines. They mean that your API enpoint is up and running.</p>
+
+<pre><code>2016-02-04 13:55:47.363  INFO 9828 --- [           main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2016-02-04 13:55:47.368  INFO 9828 --- [           main] izzy.sggw.RememberMeApplication          : Started RememberMeApplication in 4.018 seconds (JVM running for 7.989)
+</code></pre>
+
+<p>The last, but not least, is to host your SPA. Open new <code>cmd</code> (yup, that's already the third) and go to <code>client</code> directory. You can find it the root of the project.</p>
+
+<p>When you're there, type <code>ws --spa .\index.html</code>. You should see short output</p>
+
+<pre><code>serving at http://DAYSTATE-PC:8000, http://192.168.0.15:8000, http://192.168.94.1:8000, http://192.168.154.1:8000, http://127.0.0.1:8000
+</code></pre>
+
+<p>And you're done!</p>
+
+<p>Open your browser and navigate to one of the <code>URL</code> visible in the 3rd <code>cmd</code>. Here is mine: <code>http://DAYSTATE-PC:8000</code>.</p>
+
+<p>There you go, your Remember Me! up and running.</p>
+
+<p>Congratulations.</p>
+
+<h2>
+<a id="user-content-screens" class="anchor" href="#screens" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screens</h2>
+
+<p><a href="/screens/catalog.png" target="_blank"><img src="./screens/catalog.png" alt="Browsing catalog" style="max-width:100%;"></a>
+<a href="/screens/create.png" target="_blank"><img src="./screens/create.png" alt="Creating film" style="max-width:100%;"></a>
+<a href="/screens/film_full_details.png" target="_blank"><img src="./screens/film_full_details.png" alt="Film with basic details" style="max-width:100%;"></a>
+<a href="/screens/edit_rating.png" target="_blank"><img src="./screens/edit_rating.png" alt="Rating film" style="max-width:100%;"></a>
+<a href="/screens/list_Already_watched.png" target="_blank"><img src="./screens/list_Already_watched.png" alt="Listing all films to watch" style="max-width:100%;"></a>
+<a href="/screens/delete.png" target="_blank"><img src="./screens/delete.png" alt="Deleting film" style="max-width:100%;"></a></p>
+</article></body></html>
